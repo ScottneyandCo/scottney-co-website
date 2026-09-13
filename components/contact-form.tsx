@@ -39,7 +39,7 @@ export default function ContactForm({ services }: { services: string[] }) {
           message: data.details,
         }),
       });
-      const result = await response.json();
+      const result = (await response.json()) as { success?: boolean };
       if (response.ok && result.success) {
         form.reset();
         setStatus("success");
