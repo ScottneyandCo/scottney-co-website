@@ -22,7 +22,11 @@ export async function POST(request: Request) {
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "User-Agent": "ScottneyCoWebsite/1.0 (+https://scottney.co)",
+      },
       body: JSON.stringify({
         access_key: accessKey,
         subject: `New ${service} inquiry from ${firstName} ${lastName}`,
@@ -35,9 +39,15 @@ export async function POST(request: Request) {
       }),
     });
 
-    const result = (await response.json().catch(() => ({}))) as { success?: boolean };
+    const raw = await response.text();
+    let result: { success?: boolean; message?: string } = {};
+    try {
+      result = JSON.parse(raw);
+    } catch {
+      result = {};
+    }
     if (!response.ok || !result.success) {
-      console.error("Web3Forms rejected inquiry", { status: response.status });
+      console.error("[v0] Web3Forms rejected inquiry", { status: response.status, message: result.message, raw: raw.slice(0, 300) });
       return NextResponse.json({ error: "Unable to send inquiry" }, { status: 502 });
     }
     return NextResponse.json({ ok: true });
