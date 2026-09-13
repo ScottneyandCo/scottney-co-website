@@ -1,9 +1,5 @@
 import { NextResponse } from "next/server";
 
-function escapeHtml(value: string) {
-  return value.replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character] || character);
-}
-
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Record<string, unknown>;
@@ -18,28 +14,30 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid form submission" }, { status: 400 });
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    const to = process.env.INQUIRY_TO_EMAIL;
-    const from = process.env.INQUIRY_FROM_EMAIL || "Scottney & Co. Website <onboarding@resend.dev>";
-    if (!apiKey || !to) {
-      console.error("Inquiry email is not configured");
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      console.error("Inquiry email is not configured: WEB3FORMS_ACCESS_KEY is missing");
       return NextResponse.json({ error: "Email is not configured" }, { status: 503 });
     }
 
-    const response = await fetch("https://api.resend.com/emails", {
+    const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
-        from,
-        to: [to],
-        reply_to: email,
+        access_key: accessKey,
         subject: `New ${service} inquiry from ${firstName} ${lastName}`,
-        html: `<div style="font-family:Arial,sans-serif;max-width:640px"><h1>New project inquiry</h1><p><strong>Name:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Service:</strong> ${escapeHtml(service)}</p><p><strong>Project details:</strong></p><p style="white-space:pre-wrap">${escapeHtml(details)}</p></div>`,
+        from_name: "Scottney & Co. Website",
+        name: `${firstName} ${lastName}`,
+        email,
+        replyto: email,
+        service,
+        message: details,
       }),
     });
 
-    if (!response.ok) {
-      console.error("Resend rejected inquiry email", { status: response.status });
+    const result = (await response.json().catch(() => ({}))) as { success?: boolean };
+    if (!response.ok || !result.success) {
+      console.error("Web3Forms rejected inquiry", { status: response.status });
       return NextResponse.json({ error: "Unable to send inquiry" }, { status: 502 });
     }
     return NextResponse.json({ ok: true });
