@@ -53,3 +53,46 @@
 /* Preserve the full square logo artwork—including its corner stars—inside the circle. */
 .logo-disc{display:grid;place-items:center;background:var(--cream)}
 .logo-disc img{width:78%;height:78%;object-fit:contain;transform:none}
+
+/* Services detail page styles */
+.services-hero{padding:80px clamp(22px,6vw,100px) 60px;max-width:1000px}
+.services-hero h1{font-size:clamp(3rem,8vw,5.4rem);line-height:.96;margin:14px 0 0;text-transform:uppercase;letter-spacing:-.01em}
+.services-hero-lede{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:660px;margin:26px 0 0}
+.service-jump{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.jump-chip{display:inline-flex;align-items:center;gap:9px;border:var(--border);border-radius:999px;padding:10px 18px;font-weight:900;text-transform:uppercase;letter-spacing:.03em;font-size:.8rem;background:var(--white);box-shadow:4px 4px 0 var(--black);transition:transform .18s,box-shadow .18s}
+.jump-chip span{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;color:var(--white);font-size:.72rem}
+.jump-chip.pink span{background:var(--pink)}.jump-chip.teal span{background:var(--teal)}.jump-chip.orange span{background:var(--orange)}
+.jump-chip:hover,.jump-chip:focus-visible{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--black)}
+
+.service-detail-list{display:flex;flex-direction:column}
+.service-detail{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:start;padding:clamp(56px,7vw,96px) clamp(22px,6vw,100px);border-top:var(--border);scroll-margin-top:110px}
+.service-detail.pink{background:color-mix(in srgb,var(--pink) 9%,var(--cream))}
+.service-detail.teal{background:color-mix(in srgb,var(--teal) 10%,var(--cream))}
+.service-detail.orange{background:color-mix(in srgb,var(--orange) 11%,var(--cream))}
+.service-detail-number{display:inline-grid;place-items:center;width:64px;height:64px;border-radius:50%;border:var(--border);font-weight:900;font-size:1.4rem;background:var(--white)}
+.service-detail.pink .service-detail-number{box-shadow:5px 5px 0 var(--pink)}
+.service-detail.teal .service-detail-number{box-shadow:5px 5px 0 var(--teal)}
+.service-detail.orange .service-detail-number{box-shadow:5px 5px 0 var(--orange)}
+.service-detail h2{font-size:clamp(2.1rem,4vw,3.2rem);line-height:1;margin:22px 0 0;text-transform:uppercase;letter-spacing:-.01em}
+.service-detail-intro{font-size:1.2rem;font-weight:800;margin:18px 0 0}
+.service-detail-body{margin:16px 0 30px;max-width:52ch}
+.service-detail-panels{display:grid;gap:22px}
+.detail-panel{background:var(--white);border:var(--border);border-radius:22px;padding:26px 26px 28px;box-shadow:6px 6px 0 var(--black)}
+.detail-panel h3{margin:0 0 16px;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em}
+.detail-panel ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.detail-panel li{display:flex;align-items:flex-start;gap:10px;font-weight:700}
+.detail-panel li svg{flex:0 0 auto;margin-top:3px}
+.service-detail.pink .detail-panel li svg{color:var(--pink)}
+.service-detail.teal .detail-panel li svg{color:var(--teal)}
+.service-detail.orange .detail-panel li svg{color:var(--orange)}
+.service-detail-index{position:absolute;top:clamp(20px,3vw,34px);right:clamp(22px,6vw,100px);font-weight:900;font-size:.8rem;letter-spacing:.1em;opacity:.55}
+
+@media(max-width:900px){
+  .service-detail{grid-template-columns:1fr;gap:34px}
+  .service-detail-index{position:static;order:-1;margin-bottom:-14px}
+}
+@media(max-width:760px){
+  .services-hero{padding:56px 22px 44px}
+  .service-jump{gap:10px}
+  .jump-chip{padding:9px 14px;font-size:.74rem}
+}

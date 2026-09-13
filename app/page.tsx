@@ -1,15 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, Check, ChevronRight, Mail, Menu, Sparkles } from "lucide-react";
 import ContactForm from "@/components/contact-form";
-
-const services = [
-  { number: "01", title: "Website Design", color: "pink", intro: "A clear, polished online home built to turn visitors into customers.", includes: ["Custom, mobile-friendly page design", "Sales-focused copy and calls to action", "Contact forms and social links", "Launch support for your domain and hosting"] },
-  { number: "02", title: "Photo Editing", color: "teal", intro: "Clean, professional images ready for print, web, social, or personal use.", includes: ["Retouching and color correction", "Background removal or replacement", "Cropping, resizing, and cleanup", "Files delivered in the formats you need"] },
-  { number: "03", title: "Voice-Over", color: "orange", intro: "Warm, engaging narration that gives your message a confident voice.", includes: ["Commercial and promotional reads", "Social, web, and presentation audio", "Cleaned and mastered audio files", "Direction and one revision round"] },
-  { number: "04", title: "Commercials", color: "orange", intro: "From raw idea to final cut—or a sharper edit of footage you already have.", includes: ["Concept and script development", "Video editing and pacing", "Titles, graphics, music, and voice-over", "Exported versions for web and social"] },
-  { number: "05", title: "Digital Marketing", color: "pink", intro: "Bold, on-brand graphics that make your offer impossible to miss.", includes: ["Flyers and event posters", "Social media graphics", "Promotional campaign assets", "Print-ready and digital files"] },
-  { number: "06", title: "Programs & Playbills", color: "teal", intro: "Well-organized programs that help every event feel thoughtfully produced.", includes: ["Custom cover and interior design", "Cast, speaker, sponsor, or agenda layouts", "Photo and advertisement placement", "Print-ready final files"] },
-];
+import { services } from "@/lib/services";
 
 const projects = [
   { type: "Website design", title: "Your brand, built to convert", className: "project-web" },
@@ -33,7 +26,7 @@ export default function Home() {
       </section>
 
       <div className="ticker" aria-label="Services offered"><div>WEBSITES ✦ PHOTO EDITING ✦ VOICE-OVER ✦ COMMERCIALS ✦ FLYERS & POSTERS ✦ PROGRAMS & PLAYBILLS ✦</div></div>
-      <section className="section services" id="services"><div className="section-heading"><p className="eyebrow">What we do</p><h2>Creative support from first idea to final file.</h2><p>Choose one service or combine several into a complete campaign. Either way, you’ll know exactly what you’re getting.</p></div><div className="service-grid">{services.map((service) => <article className={`service-card ${service.color}`} key={service.title}><span className="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.intro}</p><h4>What’s included</h4><ul>{service.includes.map(item => <li key={item}><Check size={17}/>{item}</li>)}</ul><a href="#contact">Request this service <ArrowUpRight size={18}/></a></article>)}</div></section>
+      <section className="section services" id="services"><div className="section-heading"><p className="eyebrow">What we do</p><h2>Creative support from first idea to final file.</h2><p>Choose one service or combine several into a complete campaign. Either way, you’ll know exactly what you’re getting.</p></div><div className="service-grid">{services.map((service) => <article className={`service-card ${service.color}`} key={service.title}><span className="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.intro}</p><h4>What’s included</h4><ul>{service.includes.map(item => <li key={item}><Check size={17}/>{item}</li>)}</ul><Link href={`/services#service-${service.number}`}>Learn more <ArrowUpRight size={18}/></Link></article>)}</div><div className="portfolio-note">Want the full breakdown of every service? <Link href="/services">See service details <ArrowUpRight size={18}/></Link></div></section>
 
       <section className="why"><div className="why-title"><p className="eyebrow light">Why Scottney & Co.</p><h2>Good creative work should do more than look good.</h2></div><div className="why-list"><article><strong>01</strong><div><h3>Everything works together</h3><p>Your website, campaign graphics, audio, video, and print pieces share one clear visual direction.</p></div></article><article><strong>02</strong><div><h3>Clear from the start</h3><p>You get a defined scope, straightforward feedback rounds, and deliverables you can actually use.</p></div></article><article><strong>03</strong><div><h3>Made for real people</h3><p>We balance bold ideas with clear messaging, easy reading, and the needs of your audience.</p></div></article></div></section>
 
