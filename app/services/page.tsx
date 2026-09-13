@@ -19,7 +19,7 @@ export default function ServicesPage() {
         </Link>
         <nav aria-label="Main navigation">
           <Link href="/services">Services</Link>
-          <Link href="/#work">Work</Link>
+          <Link href="/work">Work</Link>
           <Link href="/#process">Process</Link>
           <Link href="/#contact">Contact</Link>
         </nav>
@@ -28,7 +28,7 @@ export default function ServicesPage() {
           <summary aria-label="Open navigation"><Menu /></summary>
           <div>
             <Link href="/services">Services</Link>
-            <Link href="/#work">Work</Link>
+            <Link href="/work">Work</Link>
             <Link href="/#process">Process</Link>
             <Link href="/#contact">Contact</Link>
           </div>
@@ -116,7 +116,7 @@ export default function ServicesPage() {
         <p>Creative services for brands, businesses, and big ideas.</p>
         <div>
           <Link href="/services">Services</Link>
-          <Link href="/#work">Work</Link>
+          <Link href="/work">Work</Link>
           <Link href="/#contact">Contact</Link>
         </div>
         <small>© {new Date().getFullYear()} Scottney & Co. All rights reserved.</small>
