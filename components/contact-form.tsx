@@ -3,41 +3,21 @@
 import { FormEvent, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
 export default function ContactForm({ services }: { services: string[] }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   async function submitInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!ACCESS_KEY) {
-      setStatus("error");
-      return;
-    }
     setStatus("sending");
     const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
-
-    if (data.companyWebsite) {
-      form.reset();
-      setStatus("success");
-      return;
-    }
+    const data = Object.fromEntries(new FormData(form));
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          subject: `New ${data.service} inquiry from ${data.firstName} ${data.lastName}`,
-          from_name: "Scottney & Co. Website",
-          name: `${data.firstName} ${data.lastName}`,
-          email: data.email,
-          replyto: data.email,
-          service: data.service,
-          message: data.details,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
       const result = (await response.json()) as { success?: boolean };
       if (response.ok && result.success) {
