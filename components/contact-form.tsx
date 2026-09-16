@@ -25,21 +25,28 @@ export default function ContactForm({ services }: { services: string[] }) {
     }
 
     try {
+      const payload = new FormData();
+      payload.append("access_key", ACCESS_KEY);
+      payload.append("subject", `New ${data.service} inquiry from ${data.firstName} ${data.lastName}`);
+      payload.append("from_name", "Scottney & Co. Website");
+      payload.append("name", `${data.firstName} ${data.lastName}`);
+      payload.append("email", data.email);
+      payload.append("replyto", data.email);
+      payload.append("service", data.service);
+      payload.append("message", data.details);
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          subject: `New ${data.service} inquiry from ${data.firstName} ${data.lastName}`,
-          from_name: "Scottney & Co. Website",
-          name: `${data.firstName} ${data.lastName}`,
-          email: data.email,
-          replyto: data.email,
-          service: data.service,
-          message: data.details,
-        }),
+        headers: { Accept: "application/json" },
+        body: payload,
       });
-      const result = (await response.json()) as { success?: boolean };
+      const responseText = await response.text();
+      let result: { success?: boolean } = {};
+      try {
+        result = JSON.parse(responseText) as { success?: boolean };
+      } catch {
+        result = {};
+      }
       if (response.ok && result.success) {
         form.reset();
         setStatus("success");
