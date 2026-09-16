@@ -4,10 +4,9 @@ A responsive, single-page business website built with Next.js and designed for e
 
 ## Update before launch
 
-- Copy `.env.example` to `.env.local` and replace the placeholder values.
 - Replace the three portfolio placeholders with finished client work when available.
-- Create a Resend account and API key, then add the same four environment variables in Vercel under **Project Settings → Environment Variables**.
-- Verify your sending domain in Resend before changing `INQUIRY_FROM_EMAIL` from the Resend testing address to your branded address.
+- Configure these production variables in Vercel: `RESEND_API_KEY`, `INQUIRY_FROM_EMAIL`, and `INQUIRY_TO_EMAIL`.
+- Verify the domain used by `INQUIRY_FROM_EMAIL` in Resend before sending production email. `INQUIRY_TO_EMAIL` is the inbox that receives inquiries.
 
 ## Run locally
 
