@@ -6,7 +6,6 @@ type Inquiry = {
   email?: unknown;
   service?: unknown;
   details?: unknown;
-  companyWebsite?: unknown;
 };
 
 const text = (value: unknown, maximum: number) =>
@@ -35,8 +34,7 @@ export async function POST(request: Request) {
   const service = text(inquiry.service, 160);
   const details = text(inquiry.details, 5_000);
 
-  if (text(inquiry.companyWebsite, 200)) {
-    return Response.json({ success: true });
+ 
   }
 
   if (!firstName || !lastName || !service || !details || !/^\S+@\S+\.\S+$/.test(email)) {
