@@ -39,7 +39,7 @@ export async function POST(request: Request) {
 
   if (!firstName || !lastName || !service || !details || !/^\S+@\S+\.\S+$/.test(email)) {
     return Response.json({ error: "Please complete all required fields." }, { status: 400 });
-  }
+  
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
