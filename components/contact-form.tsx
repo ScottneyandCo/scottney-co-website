@@ -11,16 +11,39 @@ export default function ContactForm({ services }: { services: string[] }) {
     event.preventDefault();
     setStatus("sending");
     const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setStatus("error");
+      return;
+    }
+
+    const firstName = (data.firstName ?? "").trim();
+    const lastName = (data.lastName ?? "").trim();
+    const email = (data.email ?? "").trim();
+    const service = (data.service ?? "").trim();
+    const details = (data.details ?? "").trim();
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New ${service} inquiry from ${firstName} ${lastName}`,
+          from_name: `${firstName} ${lastName}`,
+          email,
+          name: `${firstName} ${lastName}`,
+          service,
+          message: `Name: ${firstName} ${lastName}\nEmail: ${email}\nService: ${service}\n\n${details}`,
+        }),
       });
-      const result = (await response.json()) as { success?: boolean };
-      if (response.ok && result.success) {
+      const result = (await response.json().catch(() => null)) as { success?: boolean } | null;
+      if (response.ok && result?.success) {
         form.reset();
         setStatus("success");
       } else {
