@@ -26,6 +26,7 @@
   .orbit-text{left:auto;right:auto;bottom:auto;margin-top:28px;transform:rotate(-3deg)}
 }
 
+section#contact > a.button{font-size:48px}
 .contact button:disabled{cursor:wait;opacity:.7}.form-status{min-height:28px;margin-top:16px;text-align:center;font-weight:800}.honey{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 
 /* Larger hero mark with clear breathing room for the decorative stars. */
