@@ -4,10 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function ContactForm({ services }: { services: string[] }) {
   return (
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="f4365b33-c61b-4b27-b6c3-7e950c575b57" />
-      <input type="hidden" name="subject" value="New project inquiry from Scottney & Co." />
-      <input type="hidden" name="redirect" value="https://scottneyandco.com/#contact" />
+    <form>
       <div className="field-row"><label>First name<input required name="name" autoComplete="given-name" placeholder="Your first name" maxLength={80}/></label><label>Last name<input required name="last_name" autoComplete="family-name" placeholder="Your last name" maxLength={80}/></label></div>
       <label>Email address<input required type="email" name="email" autoComplete="email" placeholder="you@example.com" maxLength={254}/></label>
       <label>What service are you interested in?<select required name="service" defaultValue=""><option value="" disabled>Select a service</option>{services.map(service => <option key={service}>{service}</option>)}<option>Multiple services</option><option>I’m not sure yet</option></select></label>
