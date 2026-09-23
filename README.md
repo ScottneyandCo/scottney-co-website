@@ -5,8 +5,6 @@ A responsive, single-page business website built with Next.js and designed for e
 ## Update before launch
 
 - Replace the three portfolio placeholders with finished client work when available.
-- Configure these production variables in Vercel: `WEB3FORMS_ACCESS_KEY` and `INQUIRY_TO_EMAIL`.
-- `WEB3FORMS_ACCESS_KEY` is your Web3Forms access key. `INQUIRY_TO_EMAIL` is the inbox that receives inquiries.
 
 ## Run locally
 
