@@ -56,18 +56,18 @@ export const services: Service[] = [
   },
   {
     number: "04",
-    title: "Commercials",
+    title: "Voice Commercials",
     color: "orange",
-    intro: "From raw idea to final cut—or a sharper edit of footage you already have.",
+    intro: "Professional voice ads for radio, websites, social media, and more.",
     detail:
-      "We shape your message into a paced, watchable spot. Start from a concept and script, or hand us existing footage to refine. Either way you get titles, graphics, music, and voice-over exported for wherever it will run.",
+      "We create polished, voice-led commercials that make your message clear and memorable. From concept and script to a confident recorded read, we deliver clean, ready-to-use audio for radio and online placements.",
     includes: [
       "Concept and script development",
-      "Video editing and pacing",
-      "Titles, graphics, music, and voice-over",
-      "Exported versions for web and social",
+      "Professional voice recording",
+      "Audio editing and mastering",
+      "Files prepared for radio, web, and social",
     ],
-    idealFor: ["Product and service launches", "Social video campaigns", "Event recaps and promos"],
+    idealFor: ["Radio ads", "Website and social media promotions", "Business, product, and service launches"],
   },
   {
     number: "05",
