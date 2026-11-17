@@ -68,7 +68,10 @@ export default function ServicesPage() {
               <h2 id={`service-${service.number}-title`}>{service.title}</h2>
               <p className="service-detail-intro">{service.intro}</p>
               <p className="service-detail-body">{service.detail}</p>
-              <Link className="button" href="/#contact">Request this service <ArrowUpRight size={18} /></Link>
+              <div className="service-detail-actions">
+                <Link className="button" href={`/pricing/${service.slug}`}>View pricing <ArrowUpRight size={18} /></Link>
+                <Link className="service-contact-link" href="/#contact">Request this service</Link>
+              </div>
             </div>
             <div className="service-detail-panels">
               <div className="detail-panel">

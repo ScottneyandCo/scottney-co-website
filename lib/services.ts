@@ -1,5 +1,6 @@
 export type Service = {
   number: string;
+  slug: string;
   title: string;
   color: "pink" | "teal" | "orange";
   intro: string;
@@ -11,6 +12,7 @@ export type Service = {
 export const services: Service[] = [
   {
     number: "01",
+    slug: "website-design",
     title: "Website Design",
     color: "pink",
     intro: "A clear, polished online home built to turn visitors into customers.",
@@ -26,6 +28,7 @@ export const services: Service[] = [
   },
   {
     number: "02",
+    slug: "photo-editing",
     title: "Photo Editing",
     color: "teal",
     intro: "Clean, professional images ready for print, web, social, or personal use.",
@@ -41,6 +44,7 @@ export const services: Service[] = [
   },
   {
     number: "03",
+    slug: "voice-over-commercials",
     title: "Voice-Over & Commercials",
     color: "orange",
     intro: "Clear, professional voice work for radio, websites, social media, and more.",
@@ -56,6 +60,7 @@ export const services: Service[] = [
   },
   {
     number: "04",
+    slug: "digital-marketing",
     title: "Digital Marketing",
     color: "pink",
     intro: "Bold, on-brand graphics that make your offer impossible to miss.",
@@ -71,6 +76,7 @@ export const services: Service[] = [
   },
   {
     number: "05",
+    slug: "programs-playbills",
     title: "Programs & Playbills",
     color: "teal",
     intro: "Well-organized programs that help every event feel thoughtfully produced.",
