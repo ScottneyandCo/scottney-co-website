@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowUpRight, Menu } from "lucide-react";
 import type { ServicePricingPage as ServicePricingPageData } from "@/lib/service-pricing";
 import ServicesDropdown from "@/components/services-dropdown";
 
-const inquiryUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeRWZyR26B-9X4uUTptzdo-h2m0odOsm-gIfm31zZhG5rHIvg/viewform";
+const inquiryUrl = "/#inquiry-form";
 
 type ServicePricingPageProps = {
   page: ServicePricingPageData;
@@ -23,7 +23,7 @@ export default function ServicePricingPage({ page }: ServicePricingPageProps) {
           <Link href="/#process">Process</Link>
           <Link href="/#contact">Contact</Link>
         </nav>
-        <Link className="button button-small" href={inquiryUrl} target="_blank" rel="noreferrer">
+        <Link className="button button-small" href={inquiryUrl}>
           Start a project <ArrowUpRight size={17} />
         </Link>
         <details className="mobile-menu">
@@ -42,7 +42,7 @@ export default function ServicePricingPage({ page }: ServicePricingPageProps) {
         <p className="eyebrow">Scottney & Co. / clear pricing</p>
         <h1>{page.title}<span>.</span></h1>
         <p>{page.description}</p>
-        <Link className="button" href={inquiryUrl} target="_blank" rel="noreferrer">
+        <Link className="button" href={inquiryUrl}>
           Ask about a project <ArrowUpRight size={18} />
         </Link>
       </section>
@@ -78,7 +78,7 @@ export default function ServicePricingPage({ page }: ServicePricingPageProps) {
         </div>
         <div>
           <p>Share what you&apos;re planning and we&apos;ll confirm the scope, timeline, and final price before work begins.</p>
-          <Link className="button button-cream" href={inquiryUrl} target="_blank" rel="noreferrer">
+          <Link className="button button-cream" href={inquiryUrl}>
             Request a quote <ArrowUpRight size={18} />
           </Link>
         </div>

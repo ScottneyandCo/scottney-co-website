@@ -167,6 +167,11 @@ section#contact > a.button{font-size:48px}
 @media(max-width:900px){.pricing-option-grid{grid-template-columns:1fr}.pricing-clarity-band{grid-template-columns:1fr;gap:26px}}
 @media(max-width:600px){.pricing-page-hero{padding-bottom:54px}.pricing-catalog{padding-bottom:66px}.pricing-catalog-group{padding:38px 0}.pricing-option{gap:12px;padding:16px}.pricing-option strong{font-size:.9rem;padding:6px 8px}.pricing-clarity-band{padding:66px 22px}.pricing-clarity-band .button{font-size:.92rem;padding:14px 16px}}
 
+#inquiry-form h3{margin:0 0 22px;font-size:1.4rem;line-height:1.2;text-transform:uppercase}
+#inquiry-form button:disabled{opacity:.7;cursor:wait}
+#inquiry-form .form-status{margin:16px 0 0;text-align:center;font-weight:800}
+
+
 .services-menu{position:relative}
 .services-menu summary{display:flex;align-items:center;gap:5px;list-style:none;cursor:pointer;font-weight:800;text-transform:uppercase;font-size:.82rem;letter-spacing:.08em}
 .services-menu summary::-webkit-details-marker{display:none}
