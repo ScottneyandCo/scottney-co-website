@@ -46,7 +46,7 @@ export default function ServicePricingPage({ page }: ServicePricingPageProps) {
         </Link>
       </section>
 
-      <div className="ticker" aria-label="Service pricing"><div>STRAIGHTFORWARD PRICING ✦ CLEAR SCOPE ✦ MADE FOR YOUR PROJECT ✦</div></div>
+      <div className="ticker" aria-label="Service pricing"><div>✦ STRAIGHTFORWARD PRICING ✦ CLEAR SCOPE ✦ MADE FOR YOUR PROJECT ✦</div></div>
 
       <section className="pricing-catalog" aria-label={`${page.title} pricing`}>
         {page.groups.map((group) => (
