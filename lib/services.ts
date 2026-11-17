@@ -41,36 +41,21 @@ export const services: Service[] = [
   },
   {
     number: "03",
-    title: "Voice-Over",
+    title: "Voice-Over & Commercials",
     color: "orange",
-    intro: "Warm, engaging narration that gives your message a confident voice.",
+    intro: "Clear, professional voice work for radio, websites, social media, and more.",
     detail:
-      "A great read makes people listen. We record, clean, and master narration that fits your tone—whether that is a polished commercial, an explainer, or an on-brand social clip—complete with direction and a revision round.",
+      "From radio and online commercials to narration for explainers and presentations, we record, edit, and master audio that fits your message and tone. Get script guidance, a confident recorded read, and polished files ready to use wherever your audience listens.",
     includes: [
-      "Commercial and promotional reads",
-      "Social, web, and presentation audio",
-      "Cleaned and mastered audio files",
-      "Direction and one revision round",
+      "Commercials for radio, web, and social",
+      "Narration for explainers and presentations",
+      "Audio editing and mastering",
+      "Script guidance, direction, and one revision round",
     ],
-    idealFor: ["Ads and promos", "Explainer and training videos", "Phone systems and presentations"],
+    idealFor: ["Radio and online ads", "Explainer and training videos", "Promos, presentations, and phone systems"],
   },
   {
     number: "04",
-    title: "Voice Commercials",
-    color: "orange",
-    intro: "Professional voice ads for radio, websites, social media, and more.",
-    detail:
-      "We create polished, voice-led commercials that make your message clear and memorable. From concept and script to a confident recorded read, we deliver clean, ready-to-use audio for radio and online placements.",
-    includes: [
-      "Concept and script development",
-      "Professional voice recording",
-      "Audio editing and mastering",
-      "Files prepared for radio, web, and social",
-    ],
-    idealFor: ["Radio ads", "Website and social media promotions", "Business, product, and service launches"],
-  },
-  {
-    number: "05",
     title: "Digital Marketing",
     color: "pink",
     intro: "Bold, on-brand graphics that make your offer impossible to miss.",
@@ -85,7 +70,7 @@ export const services: Service[] = [
     idealFor: ["Events and grand openings", "Seasonal promotions", "Multi-channel campaigns"],
   },
   {
-    number: "06",
+    number: "05",
     title: "Programs & Playbills",
     color: "teal",
     intro: "Well-organized programs that help every event feel thoughtfully produced.",

@@ -7,7 +7,7 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Services | Scottney & Co.",
   description:
-    "A detailed look at every Scottney & Co. service: website design, photo editing, voice-over, commercials, digital marketing, flyers, posters, programs, and playbills.",
+    "A detailed look at Scottney & Co. services: website design, photo editing, voice-over and commercials, digital marketing, and programs and playbills.",
 };
 
 export default function ServicesPage() {
@@ -39,7 +39,7 @@ export default function ServicesPage() {
         <p className="eyebrow"><Sparkles size={17} /> Everything we make</p>
         <h1>Services, in full detail.</h1>
         <p className="services-hero-lede">
-          Six ways we help you look ready, sound confident, and sell clearly. Pick one, or combine several into a complete
+          Five ways we help you look ready, sound confident, and sell clearly. Pick one, or combine several into a complete
           campaign—each with a defined scope and deliverables you can actually use.
         </p>
         <nav className="service-jump" aria-label="Jump to a service">
@@ -52,7 +52,7 @@ export default function ServicesPage() {
       </section>
 
       <div className="ticker" aria-label="Services offered">
-        <div>WEBSITES ✦ PHOTO EDITING ✦ VOICE-OVER ✦ COMMERCIALS ✦ FLYERS & POSTERS ✦ PROGRAMS & PLAYBILLS ✦</div>
+        <div>WEBSITES ✦ PHOTO EDITING ✦ VOICE-OVER & COMMERCIALS ✦ FLYERS & POSTERS ✦ PROGRAMS & PLAYBILLS ✦</div>
       </div>
 
       <div className="service-detail-list">
