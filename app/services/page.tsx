@@ -52,7 +52,7 @@ export default function ServicesPage() {
       </section>
 
       <div className="ticker" aria-label="Services offered">
-        <div>WEBSITES ✦ PHOTO EDITING ✦ VOICE-OVER & COMMERCIALS ✦ FLYERS & POSTERS ✦ PROGRAMS & PLAYBILLS ✦</div>
+         <div>✦ WEBSITES ✦ PHOTO EDITING ✦ VOICE-OVER & COMMERCIALS ✦ FLYERS & POSTERS ✦ PROGRAMS & PLAYBILLS ✦</div>
       </div>
 
       <div className="service-detail-list">
