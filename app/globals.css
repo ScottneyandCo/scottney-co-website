@@ -166,3 +166,17 @@ section#contact > a.button{font-size:48px}
 .pricing-clarity-band .button-cream{background:var(--cream);color:var(--black);box-shadow:5px 5px 0 var(--pink)}
 @media(max-width:900px){.pricing-option-grid{grid-template-columns:1fr}.pricing-clarity-band{grid-template-columns:1fr;gap:26px}}
 @media(max-width:600px){.pricing-page-hero{padding-bottom:54px}.pricing-catalog{padding-bottom:66px}.pricing-catalog-group{padding:38px 0}.pricing-option{gap:12px;padding:16px}.pricing-option strong{font-size:.9rem;padding:6px 8px}.pricing-clarity-band{padding:66px 22px}.pricing-clarity-band .button{font-size:.92rem;padding:14px 16px}}
+
+.services-menu{position:relative}
+.services-menu summary{display:flex;align-items:center;gap:5px;list-style:none;cursor:pointer;font-weight:800;text-transform:uppercase;font-size:.82rem;letter-spacing:.08em}
+.services-menu summary::-webkit-details-marker{display:none}
+.services-menu summary:focus-visible{outline:3px solid var(--pink);outline-offset:5px}
+.services-menu[open] summary svg{transform:rotate(180deg)}
+.services-menu-list{position:absolute;top:calc(100% + 14px);left:50%;z-index:30;display:grid;gap:0;min-width:240px;padding:8px;background:var(--cream);border:var(--border);box-shadow:5px 5px 0 var(--black);transform:translateX(-50%)}
+.services-menu-list a{padding:10px 12px;font-size:.78rem!important;letter-spacing:.04em!important;white-space:nowrap}
+.services-menu-list a:hover,.services-menu-list a:focus-visible{background:var(--pink);color:var(--black);outline:none}
+.mobile-menu .services-menu{position:relative}
+.mobile-menu .services-menu summary{font-size:.9rem;letter-spacing:.02em}
+.mobile-menu .services-menu-list{position:static;min-width:0;margin-top:8px;padding:4px;transform:none;box-shadow:3px 3px 0 var(--black)}
+.mobile-menu .services-menu-list a{font-size:.76rem!important}
+

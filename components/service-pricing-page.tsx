@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Menu } from "lucide-react";
 import type { ServicePricingPage as ServicePricingPageData } from "@/lib/service-pricing";
+import ServicesDropdown from "@/components/services-dropdown";
 
 const inquiryUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeRWZyR26B-9X4uUTptzdo-h2m0odOsm-gIfm31zZhG5rHIvg/viewform";
 
@@ -17,7 +18,7 @@ export default function ServicePricingPage({ page }: ServicePricingPageProps) {
           <Image src="/scottney-logo.png" alt="Scottney & Co. Digital Marketing" width={180} height={180} priority />
         </Link>
         <nav aria-label="Main navigation">
-          <Link href="/services">Services</Link>
+          <ServicesDropdown />
           <Link href="/#work">Work</Link>
           <Link href="/#process">Process</Link>
           <Link href="/#contact">Contact</Link>
@@ -28,7 +29,7 @@ export default function ServicePricingPage({ page }: ServicePricingPageProps) {
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><Menu /></summary>
           <div>
-            <Link href="/services">Services</Link>
+            <ServicesDropdown />
             <Link href="/#work">Work</Link>
             <Link href="/#process">Process</Link>
             <Link href="/#contact">Contact</Link>

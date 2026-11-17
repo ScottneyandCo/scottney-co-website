@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, Check, ChevronRight, Mail, Menu, Sparkles } from "lucide-react";
 import ContactForm from "@/components/contact-form";
 import { services } from "@/lib/services";
+import ServicesDropdown from "@/components/services-dropdown";
 
 const projects = [
   { type: "Website design", title: "Your brand, built to convert", className: "project-web" },
@@ -15,9 +16,9 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Scottney and Company home"><Image src="/scottney-logo.png" alt="Scottney & Co. Digital Marketing" width={180} height={180} priority /></a>
-        <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
+        <nav aria-label="Main navigation"><ServicesDropdown /><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
         <a className="button button-small" href="#contact">Start a project <ArrowUpRight size={17} /></a>
-        <details className="mobile-menu"><summary aria-label="Open navigation"><Menu /></summary><div><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></div></details>
+        <details className="mobile-menu"><summary aria-label="Open navigation"><Menu /></summary><div><ServicesDropdown /><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></div></details>
       </header>
 
       <section className="hero" id="top">

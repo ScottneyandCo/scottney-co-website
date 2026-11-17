@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check, ChevronRight, Menu, Sparkles } from "lucide-react";
 import { services } from "@/lib/services";
+import ServicesDropdown from "@/components/services-dropdown";
 
 export const metadata: Metadata = {
   title: "Services | Scottney & Co.",
@@ -18,7 +19,7 @@ export default function ServicesPage() {
           <Image src="/scottney-logo.png" alt="Scottney & Co. Digital Marketing" width={180} height={180} priority />
         </Link>
         <nav aria-label="Main navigation">
-          <Link href="/services">Services</Link>
+          <ServicesDropdown />
           <Link href="/#work">Work</Link>
           <Link href="/#process">Process</Link>
           <Link href="/#contact">Contact</Link>
@@ -27,7 +28,7 @@ export default function ServicesPage() {
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><Menu /></summary>
           <div>
-            <Link href="/services">Services</Link>
+            <ServicesDropdown />
             <Link href="/#work">Work</Link>
             <Link href="/#process">Process</Link>
             <Link href="/#contact">Contact</Link>
