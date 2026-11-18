@@ -65,7 +65,7 @@ section#contact > a.button{font-size:48px}
 .jump-chip.pink span{background:var(--pink)}.jump-chip.teal span{background:var(--teal)}.jump-chip.orange span{background:var(--orange)}
 .jump-chip:hover,.jump-chip:focus-visible{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--black)}
 
-.service-detail-list{display:flex;flex-direction:column}
+.service-detail-list{display:flex;flex-direction:column}.service-detail-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px}.service-contact-link{font-weight:900;text-decoration:underline;text-underline-offset:4px}
 .service-detail{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:start;padding:clamp(56px,7vw,96px) clamp(22px,6vw,100px);border-top:var(--border);scroll-margin-top:110px}
 .service-detail.pink{background:color-mix(in srgb,var(--pink) 9%,var(--cream))}
 .service-detail.teal{background:color-mix(in srgb,var(--teal) 10%,var(--cream))}
@@ -97,3 +97,91 @@ section#contact > a.button{font-size:48px}
   .service-jump{gap:10px}
   .jump-chip{padding:9px 14px;font-size:.74rem}
 }
+
+/* Website design landing and pricing page */
+.web-design-hero{display:grid;grid-template-columns:1fr .9fr;align-items:center;gap:clamp(38px,7vw,100px);padding:clamp(54px,8vw,110px) clamp(22px,6vw,100px);overflow:hidden}
+.web-design-copy h1{font-size:clamp(3rem,5.4vw,6.6rem);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin:22px 0}
+.web-design-copy h1 span{color:var(--pink)}
+.web-design-lede{max-width:590px;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.55}
+.web-design-proof{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:36px;font-weight:900;text-transform:uppercase;font-size:.76rem;letter-spacing:.06em}
+.web-design-proof span:before{content:"✓";color:var(--teal);font-size:1rem;margin-right:8px}
+.web-design-poster{justify-self:center;display:block;position:relative;width:min(100%,470px);padding:12px;background:var(--white);border:var(--border);box-shadow:10px 10px 0 var(--pink);transform:rotate(2deg);transition:transform .2s,box-shadow .2s}
+.web-design-poster:hover,.web-design-poster:focus-visible{transform:rotate(0) translate(-3px,-3px);box-shadow:13px 13px 0 var(--pink)}
+.web-design-poster img{display:block;width:100%;height:auto}
+.web-design-poster>span{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;white-space:nowrap;background:var(--black);color:var(--white);padding:11px 17px;border-radius:999px;font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em}
+.web-pricing-section{padding:clamp(76px,9vw,124px) clamp(22px,6vw,100px);background:var(--white);scroll-margin-top:30px}
+.web-pricing-heading{max-width:710px;margin:0 auto 48px;text-align:center}
+.web-pricing-heading .eyebrow{justify-content:center}
+.web-pricing-heading h2{font-size:clamp(2.6rem,6vw,5rem);line-height:.95;text-transform:uppercase;margin:18px 0}
+.web-pricing-heading>p:last-child{max-width:600px;margin:18px auto 0}
+.website-package-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1400px;margin:0 auto}
+.website-package{border:var(--border);padding:20px 22px 24px;background:var(--cream);box-shadow:7px 7px 0 var(--black)}
+.website-package h3{display:inline-block;margin:0 0 16px;padding:8px 14px;border:2px solid var(--black);font-size:1.1rem;text-transform:uppercase;letter-spacing:.03em;transform:rotate(-1deg)}
+.website-package.teal h3{background:var(--teal)}.website-package.pink h3{background:var(--pink)}.website-package.yellow h3{background:var(--orange)}
+.website-plan-list{display:grid}
+.website-plan{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:2px solid var(--black)}
+.website-plan h4{margin:0;font-size:1.05rem;line-height:1.2}
+.website-plan p{margin:5px 0 0;font-size:.9rem;line-height:1.4}
+.website-plan strong{flex:0 0 auto;background:var(--orange);padding:6px 10px;font-size:1.1rem;line-height:1.2;transform:rotate(-2deg)}
+.website-package.pink .website-plan strong{background:var(--pink)}.website-package.teal .website-plan strong{background:var(--teal)}
+.website-package ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.website-package li{display:flex;align-items:center;gap:9px;font-weight:700}
+.website-package li svg{flex:0 0 auto;color:var(--black);background:var(--teal);border-radius:50%;padding:2px}
+.website-package.pink li svg{background:var(--pink)}.website-package.yellow li svg{background:var(--orange)}
+.website-quote-band{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding:clamp(70px,8vw,108px) clamp(22px,6vw,100px);background:var(--black);color:var(--white)}
+.website-quote-band h2{margin:14px 0 0;font-size:clamp(2.7rem,6vw,5rem);line-height:.94;text-transform:uppercase}
+.website-quote-band>div:last-child>p{max-width:600px;line-height:1.6;margin:0 0 26px}
+.website-quote-band .button-cream{background:var(--cream);color:var(--black);box-shadow:5px 5px 0 var(--pink)}
+@media(max-width:900px){.web-design-hero{grid-template-columns:1fr .8fr;gap:35px}.website-package-grid{grid-template-columns:1fr 1fr}.website-package.yellow{grid-column:1/-1}.website-package.yellow .website-plan-list{grid-template-columns:1fr 1fr;gap:0 24px}}
+@media(max-width:700px){.web-design-hero{grid-template-columns:1fr;padding-top:54px}.web-design-copy h1{font-size:clamp(3.3rem,15vw,5.5rem)}.web-design-poster{width:min(82%,390px);margin:12px 12px 0}.web-pricing-section{padding:72px 22px}.website-package-grid{grid-template-columns:1fr;gap:24px}.website-package.yellow{grid-column:auto}.website-package.yellow .website-plan-list{grid-template-columns:1fr}.website-quote-band{grid-template-columns:1fr;gap:26px;padding:72px 22px}.website-quote-band .button{font-size:.92rem;padding:14px 16px}}
+
+/* Individual service pricing pages */
+.pricing-page .ticker div{text-align:center;width:100%}
+.pricing-page-hero{padding:clamp(56px,8vw,100px) clamp(22px,6vw,100px) 72px;max-width:1100px}
+.pricing-back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:36px;font-weight:900;text-transform:uppercase;font-size:.8rem;letter-spacing:.06em}
+.pricing-back-link:hover,.pricing-back-link:focus-visible{text-decoration:underline;text-underline-offset:4px}
+.pricing-page-hero h1{max-width:900px;margin:18px 0;font-size:clamp(3rem,8vw,6.5rem);line-height:.94;letter-spacing:-.04em;text-transform:uppercase;text-wrap:balance}
+.pricing-page-hero h1 span{color:var(--pink)}
+.pricing-page-hero>p:not(.eyebrow){max-width:700px;margin:0 0 30px;font-size:clamp(1.05rem,1.8vw,1.3rem)}
+.pricing-catalog{padding:20px clamp(22px,6vw,100px) 100px;background:var(--white)}
+.pricing-catalog-group{max-width:1400px;margin:0 auto;padding:50px 0;border-bottom:3px solid var(--black)}
+.pricing-group-heading{margin-bottom:24px}
+.pricing-group-heading h2{display:inline-block;margin:0;padding:8px 14px;background:var(--teal);border:2px solid var(--black);font-size:clamp(1.15rem,2.4vw,1.7rem);line-height:1.2;text-transform:uppercase;transform:rotate(-1deg)}
+.pricing-catalog-group:nth-child(3n + 2) .pricing-group-heading h2{background:var(--pink)}
+.pricing-catalog-group:nth-child(3n) .pricing-group-heading h2{background:var(--orange)}
+.pricing-option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pricing-option{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:20px;background:var(--cream);border:3px solid var(--black);box-shadow:5px 5px 0 var(--teal)}
+.pricing-option:nth-child(3n + 2){box-shadow:5px 5px 0 var(--pink)}
+.pricing-option:nth-child(3n){box-shadow:5px 5px 0 var(--orange)}
+.pricing-option-copy{min-width:0}
+.pricing-option h3{margin:0;font-size:1.05rem;line-height:1.35}
+.pricing-option p{margin:7px 0 0;font-size:.92rem;line-height:1.5}
+.pricing-option strong{flex:0 0 auto;max-width:48%;padding:7px 10px;background:var(--teal);border:2px solid var(--black);font-size:1.02rem;line-height:1.2;text-align:center}
+.pricing-option:nth-child(3n + 2) strong{background:var(--pink)}
+.pricing-option:nth-child(3n) strong{background:var(--orange)}
+.pricing-option .pricing-secondary{font-weight:800}
+.pricing-clarity-band{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding:clamp(68px,8vw,108px) clamp(22px,6vw,100px);background:var(--black);color:var(--white)}
+.pricing-clarity-band h2{margin:14px 0 0;font-size:clamp(2.5rem,5.5vw,4.8rem);line-height:.96;text-transform:uppercase}
+.pricing-clarity-band>div:last-child>p{max-width:600px;margin:0 0 24px}
+.pricing-clarity-band .button-cream{background:var(--cream);color:var(--black);box-shadow:5px 5px 0 var(--pink)}
+@media(max-width:900px){.pricing-option-grid{grid-template-columns:1fr}.pricing-clarity-band{grid-template-columns:1fr;gap:26px}}
+@media(max-width:600px){.pricing-page-hero{padding-bottom:54px}.pricing-catalog{padding-bottom:66px}.pricing-catalog-group{padding:38px 0}.pricing-option{gap:12px;padding:16px}.pricing-option strong{font-size:.9rem;padding:6px 8px}.pricing-clarity-band{padding:66px 22px}.pricing-clarity-band .button{font-size:.92rem;padding:14px 16px}}
+
+#inquiry-form h3{margin:0 0 22px;font-size:1.4rem;line-height:1.2;text-transform:uppercase}
+#inquiry-form button:disabled{opacity:.7;cursor:wait}
+#inquiry-form .form-status{margin:16px 0 0;text-align:center;font-weight:800}
+
+
+.services-menu{position:relative}
+.services-menu summary{display:flex;align-items:center;gap:5px;list-style:none;cursor:pointer;font-weight:800;text-transform:uppercase;font-size:.82rem;letter-spacing:.08em}
+.services-menu summary::-webkit-details-marker{display:none}
+.services-menu summary:focus-visible{outline:3px solid var(--pink);outline-offset:5px}
+.services-menu[open] summary svg{transform:rotate(180deg)}
+.services-menu-list{position:absolute;top:calc(100% + 14px);left:50%;z-index:30;display:grid;gap:0;min-width:240px;padding:8px;background:var(--cream);border:var(--border);box-shadow:5px 5px 0 var(--black);transform:translateX(-50%)}
+.services-menu-list a{padding:10px 12px;font-size:.78rem!important;letter-spacing:.04em!important;white-space:nowrap}
+.services-menu-list a:hover,.services-menu-list a:focus-visible{background:var(--pink);color:var(--black);outline:none}
+.mobile-menu .services-menu{position:relative}
+.mobile-menu .services-menu summary{font-size:.9rem;letter-spacing:.02em}
+.mobile-menu .services-menu-list{position:static;min-width:0;margin-top:8px;padding:4px;transform:none;box-shadow:3px 3px 0 var(--black)}
+.mobile-menu .services-menu-list a{font-size:.76rem!important}
+

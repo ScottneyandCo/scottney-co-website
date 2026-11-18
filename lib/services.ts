@@ -1,5 +1,6 @@
 export type Service = {
   number: string;
+  slug: string;
   title: string;
   color: "pink" | "teal" | "orange";
   intro: string;
@@ -11,6 +12,7 @@ export type Service = {
 export const services: Service[] = [
   {
     number: "01",
+    slug: "website-design",
     title: "Website Design",
     color: "pink",
     intro: "A clear, polished online home built to turn visitors into customers.",
@@ -26,6 +28,7 @@ export const services: Service[] = [
   },
   {
     number: "02",
+    slug: "photo-editing",
     title: "Photo Editing",
     color: "teal",
     intro: "Clean, professional images ready for print, web, social, or personal use.",
@@ -41,36 +44,23 @@ export const services: Service[] = [
   },
   {
     number: "03",
-    title: "Voice-Over",
+    slug: "voice-over-commercials",
+    title: "Voice-Over & Commercials",
     color: "orange",
-    intro: "Warm, engaging narration that gives your message a confident voice.",
+    intro: "Clear, professional voice work for radio, websites, social media, and more.",
     detail:
-      "A great read makes people listen. We record, clean, and master narration that fits your tone—whether that is a polished commercial, an explainer, or an on-brand social clip—complete with direction and a revision round.",
+      "From radio and online commercials to narration for explainers and presentations, we record, edit, and master audio that fits your message and tone. Get script guidance, a confident recorded read, and polished files ready to use wherever your audience listens.",
     includes: [
-      "Commercial and promotional reads",
-      "Social, web, and presentation audio",
-      "Cleaned and mastered audio files",
-      "Direction and one revision round",
+      "Commercials for radio, web, and social",
+      "Narration for explainers and presentations",
+      "Audio editing and mastering",
+      "Script guidance, direction, and one revision round",
     ],
-    idealFor: ["Ads and promos", "Explainer and training videos", "Phone systems and presentations"],
+    idealFor: ["Radio and online ads", "Explainer and training videos", "Promos, presentations, and phone systems"],
   },
   {
     number: "04",
-    title: "Commercials",
-    color: "orange",
-    intro: "From raw idea to final cut—or a sharper edit of footage you already have.",
-    detail:
-      "We shape your message into a paced, watchable spot. Start from a concept and script, or hand us existing footage to refine. Either way you get titles, graphics, music, and voice-over exported for wherever it will run.",
-    includes: [
-      "Concept and script development",
-      "Video editing and pacing",
-      "Titles, graphics, music, and voice-over",
-      "Exported versions for web and social",
-    ],
-    idealFor: ["Product and service launches", "Social video campaigns", "Event recaps and promos"],
-  },
-  {
-    number: "05",
+    slug: "digital-marketing",
     title: "Digital Marketing",
     color: "pink",
     intro: "Bold, on-brand graphics that make your offer impossible to miss.",
@@ -85,7 +75,8 @@ export const services: Service[] = [
     idealFor: ["Events and grand openings", "Seasonal promotions", "Multi-channel campaigns"],
   },
   {
-    number: "06",
+    number: "05",
+    slug: "programs-playbills",
     title: "Programs & Playbills",
     color: "teal",
     intro: "Well-organized programs that help every event feel thoughtfully produced.",

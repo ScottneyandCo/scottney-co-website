@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check, ChevronRight, Menu, Sparkles } from "lucide-react";
 import { services } from "@/lib/services";
+import ServicesDropdown from "@/components/services-dropdown";
 
 export const metadata: Metadata = {
   title: "Services | Scottney & Co.",
   description:
-    "A detailed look at every Scottney & Co. service: website design, photo editing, voice-over, commercials, digital marketing, flyers, posters, programs, and playbills.",
+    "A detailed look at Scottney & Co. services: website design, photo editing, voice-over and commercials, digital marketing, and programs and playbills.",
 };
 
 export default function ServicesPage() {
@@ -18,7 +19,7 @@ export default function ServicesPage() {
           <Image src="/scottney-logo.png" alt="Scottney & Co. Digital Marketing" width={180} height={180} priority />
         </Link>
         <nav aria-label="Main navigation">
-          <Link href="/services">Services</Link>
+          <ServicesDropdown />
           <Link href="/#work">Work</Link>
           <Link href="/#process">Process</Link>
           <Link href="/#contact">Contact</Link>
@@ -27,7 +28,7 @@ export default function ServicesPage() {
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><Menu /></summary>
           <div>
-            <Link href="/services">Services</Link>
+            <ServicesDropdown />
             <Link href="/#work">Work</Link>
             <Link href="/#process">Process</Link>
             <Link href="/#contact">Contact</Link>
@@ -39,7 +40,7 @@ export default function ServicesPage() {
         <p className="eyebrow"><Sparkles size={17} /> Everything we make</p>
         <h1>Services, in full detail.</h1>
         <p className="services-hero-lede">
-          Six ways we help you look ready, sound confident, and sell clearly. Pick one, or combine several into a complete
+          Five ways we help you look ready, sound confident, and sell clearly. Pick one, or combine several into a complete
           campaign—each with a defined scope and deliverables you can actually use.
         </p>
         <nav className="service-jump" aria-label="Jump to a service">
@@ -52,7 +53,7 @@ export default function ServicesPage() {
       </section>
 
       <div className="ticker" aria-label="Services offered">
-        <div>WEBSITES ✦ PHOTO EDITING ✦ VOICE-OVER ✦ COMMERCIALS ✦ FLYERS & POSTERS ✦ PROGRAMS & PLAYBILLS ✦</div>
+         <div>✦ WEBSITES ✦ PHOTO EDITING ✦ VOICE-OVER & COMMERCIALS ✦ FLYERS & POSTERS ✦ PROGRAMS & PLAYBILLS ✦</div>
       </div>
 
       <div className="service-detail-list">
@@ -68,7 +69,10 @@ export default function ServicesPage() {
               <h2 id={`service-${service.number}-title`}>{service.title}</h2>
               <p className="service-detail-intro">{service.intro}</p>
               <p className="service-detail-body">{service.detail}</p>
-              <Link className="button" href="/#contact">Request this service <ArrowUpRight size={18} /></Link>
+              <div className="service-detail-actions">
+                <Link className="button" href={`/pricing/${service.slug}`}>View pricing <ArrowUpRight size={18} /></Link>
+                <Link className="service-contact-link" href="/#contact">Request this service</Link>
+              </div>
             </div>
             <div className="service-detail-panels">
               <div className="detail-panel">
