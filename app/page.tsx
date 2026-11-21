@@ -23,7 +23,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy"><p className="eyebrow"><Sparkles size={17} /> Creative services, made clear</p><h1>Big ideas.<br/><span>Bold execution.</span></h1><p className="hero-lede">Websites, visuals, audio, video, and print design that help your business look ready, sound confident, and sell clearly.</p><div className="hero-actions"><a className="button" href="#contact">Tell us what you need <ArrowUpRight /></a><a className="text-link" href="#services">Explore services <ChevronRight /></a></div><div className="hero-proof"><span>One creative partner</span><span>Clear deliverables</span><span>Built for your goals</span></div></div>
-        <div className="hero-art" aria-hidden="true"><div className="logo-disc"><Image src="/scottney-logo.png" alt="" width={620} height={620} priority /></div><span className="star star-one">✦</span><span className="star star-two">✦</span><div className="orbit-text">• WEB • PHOTO • VOICE • FLYER •</div></div>
+        <div className="hero-art" aria-hidden="true"><div className="logo-disc"><Image src="/scottney-logo.png" alt="Scottney & Co. creative services logo" width={620} height={620} priority /></div><span className="star star-one">✦</span><span className="star star-two">✦</span><div className="orbit-text">• WEB • PHOTO • VOICE • FLYER •</div></div>
       </section>
 
       <div className="ticker" aria-label="Services offered"><div>WEBSITES ✦ PHOTO EDITING ✦ VOICE-OVER & COMMERCIALS ✦ FLYERS & POSTERS ✦ PROGRAMS & PLAYBILLS ✦</div></div>
